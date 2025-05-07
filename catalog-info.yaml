@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: okvcalc6m-go-gitops
+  description: This is GitOps manifest for okvcalc6m-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=okvcalc6m-go
+    backstage.io/kubernetes-id: okvcalc6m-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: okvcalc6m-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:okvcalc6m-go
